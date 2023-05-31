@@ -1,22 +1,23 @@
 import './index.css';
 
 
-const Citas=()=> {
-
+const Citas = ({ citas }) => {
   return (
-  <div class="one-half column">
-    <h2>Administra tus citas</h2>
-    <div class="cita">
-      <p>Mascota: <span>Blacky</span></p>
-      <p>Dueño: <span>Jere</span></p>
-      <p>Fecha: <span>2023-05-08</span></p>
-      <p>Hora: <span>16:15</span></p>
-      <p>Sintomas: <span>No está comiendo</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
+    <div className="one-half column">
+      <h2>Administra tus citas</h2>
+      {citas.map((cita, index) => (
+        <div className="cita" key={index}>
+          <p>Mascota: <span>{cita.mascota}</span></p>
+          <p>Dueño: <span>{cita.nombre}</span></p>
+          <p>Fecha: <span>{cita.fecha}</span></p>
+          <p>Hora: <span>{cita.hora}</span></p>
+          <p>Síntomas: <span>{cita.sintomas}</span></p>
+          <button className="button eliminar u-full-width">Eliminar ×</button>
+        </div>
+      ))}
     </div>
-  </div>
+  );
+};
 
-    )       
-
-}
 
 export default Citas;
