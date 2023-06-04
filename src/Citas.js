@@ -5,6 +5,7 @@ const Citas = ({ citas }) => {
   return (
     <div className="one-half column">
       <h2>Administra tus citas</h2>
+
       {citas.map((cita, index) => (
         <div className="cita" key={index}>
           <p>Mascota: <span>{cita.mascota}</span></p>
